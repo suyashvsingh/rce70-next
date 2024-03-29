@@ -32,11 +32,7 @@ const Home = () => {
   )
 
   useEffect(() => {
-    const storedCode = localStorage.getItem(selectedLanguage.value)
-    if (storedCode) {
-      setCode(JSON.parse(storedCode))
-    } else
-      setCode(boilerplate[selectedLanguage.value as keyof typeof boilerplate])
+    setCode(boilerplate[selectedLanguage.value as keyof typeof boilerplate])
   }, [selectedLanguage])
 
   useEffect(() => {

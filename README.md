@@ -44,11 +44,11 @@ https://rce70.vercel.app: Frontend hosted on Vercel and uses AWS Lambda serverle
 
 1. Multiple language support
 
-    ![javascript]
-    ![python]
-    ![c++]
-    ![c]
-    ![java]
+   ![javascript]
+   ![python]
+   ![c++]
+   ![c]
+   ![java]
 
 2. There are three text editors: one for the code, one for the input and one for the output
 
@@ -95,31 +95,33 @@ https://rce70.vercel.app: Frontend hosted on Vercel and uses AWS Lambda serverle
 
 1. Clone the repository
 
-    ```sh
-    git clone https://github.com/suyashvsingh/rce70-next.git
-    ```
+   ```sh
+   git clone https://github.com/suyashvsingh/rce70-next.git
+   ```
 
 2. Install NPM packages
 
-    ```sh
-    npm install
-    ```
+   ```sh
+   npm install
+   ```
+
 3. Add the following to the .env.local file
-      ```sh
-      AWS_API_GATEWAY_URL={}
-      ```
 
-3. Start the application
+   ```sh
+   AWS_API_GATEWAY_URL={}
+   ```
 
-    ```sh
-    npm run dev
-    ```
+4. Start the application
 
-4. Application will run on PORT 3000
+   ```sh
+   npm run dev
+   ```
 
-5. Write the code and give any input (if required)
+5. Application will run on PORT 3000
 
-6. Run the code using Run button or <kbd>Alt</kbd> + <kbd>Enter</kbd> key
+6. Write the code and give any input (if required)
+
+7. Run the code using Run button or <kbd>Alt</kbd> + <kbd>Enter</kbd> key
 
 ## Team 😃
 
