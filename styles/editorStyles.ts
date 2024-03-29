@@ -1,3 +1,9 @@
+import { Fira_Code } from "next/font/google"
+
+export const firaCode = Fira_Code({
+  subsets: ['latin'],
+})
+
 export const customTheme = {
   base: 'vs-dark',
   inherit: true,
@@ -10,10 +16,11 @@ export const customTheme = {
 }
 
 export const optionsEditor = {
-  // fontFamily: 'Fira Code',
+  fontFamily: firaCode.style.fontFamily,
   fontSize: 16,
   scrollBeyondLastLine: false,
   minimap: {
     enabled: false,
   },
+  fontLigatures: true,
 }
