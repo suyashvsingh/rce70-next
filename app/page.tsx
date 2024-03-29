@@ -1,7 +1,6 @@
 'use client'
+import dynamic from 'next/dynamic'
 import { useState, useEffect, useRef } from 'react'
-import EditorComponent from '@/components/EditorComponent'
-import SelectComponent from '@/components/SelectComponent'
 import Loading from '@/components/Loading'
 import OuptutTextArea from '@/components/OutputTextArea'
 import InputTextArea from '@/components/InputTextArea'
@@ -9,6 +8,13 @@ import RunButton from '@/components/RunButton'
 import boilerplate from '@/data/boilerplate'
 import ResetButton from '@/components/ResetButton'
 import DownloadButton from '@/components/DownloadButton'
+import useLocalStorage from '@/hooks/useLocalStorage'
+const SelectComponent = dynamic(() => import('../components/SelectComponent'), {
+  ssr: false,
+})
+const EditorComponent = dynamic(() => import('../components/EditorComponent'), {
+  ssr: false,
+})
 
 const Home = () => {
   const [input, setInput] = useState<string>('')
@@ -16,24 +22,28 @@ const Home = () => {
   const [executionTime, setExecutionTime] = useState<number>(0)
   const [error, setError] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
-
   const buttonRef = useRef<HTMLButtonElement>(null)
 
-  const [selectedLanguage, setSelectedLanguage] = useState<{
+  const [selectedLanguage, setSelectedLanguage] = useLocalStorage<{
     value: string
     label: string
-  }>({
+  }>('selected-language', {
     value: 'javascript',
     label: 'JavaScript',
   })
 
-  const [code, setCode] = useState<string>(
+  const [code, setCode] = useLocalStorage<string>(
+    selectedLanguage.value,
     boilerplate[selectedLanguage.value as keyof typeof boilerplate]
   )
 
   useEffect(() => {
-    setCode(boilerplate[selectedLanguage.value as keyof typeof boilerplate])
-  }, [selectedLanguage])
+    const storedCode = localStorage.getItem(selectedLanguage.value)
+    if (storedCode) {
+      setCode(JSON.parse(storedCode))
+    } else
+      setCode(boilerplate[selectedLanguage.value as keyof typeof boilerplate])
+  }, [selectedLanguage, setCode])
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
