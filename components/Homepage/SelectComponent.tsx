@@ -1,6 +1,6 @@
 import Select from 'react-select'
-import selectStyle from '../styles/selectStyle'
-import languages from '../data/languages'
+import selectStyle from '@/styles/selectStyle'
+import languages from '@/data/languages'
 import { FC } from 'react'
 
 interface SelectComponentProps {

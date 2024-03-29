@@ -1,7 +1,7 @@
 import toast from 'react-hot-toast'
-import boilerplate from '../data/boilerplate'
+import boilerplate from '@/data/boilerplate'
 import { TbArrowBackUp } from 'react-icons/tb'
-import toastStyles from '../styles/toastStyle'
+import toastStyles from '@/styles/toastStyle'
 import { FC } from 'react'
 
 interface ResetButtonProps {

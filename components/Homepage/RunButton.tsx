@@ -1,6 +1,6 @@
 import { toast } from 'react-hot-toast'
 import { BsFillPlayFill } from 'react-icons/bs'
-import toastStyles from '../styles/toastStyle'
+import toastStyles from '@/styles/toastStyle'
 import { FC } from 'react'
 import { executeCode } from '@/app/actions'
 

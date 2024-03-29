@@ -10,8 +10,8 @@ export const customTheme = {
 }
 
 export const optionsEditor = {
-  fontFamily: 'Source Code Pro',
-  fontSize: 15,
+  // fontFamily: 'Fira Code',
+  fontSize: 16,
   scrollBeyondLastLine: false,
   minimap: {
     enabled: false,

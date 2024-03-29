@@ -1,5 +1,5 @@
 import Editor from '@monaco-editor/react'
-import { customTheme, optionsEditor } from '../styles/editorStyles'
+import { customTheme, optionsEditor } from '@/styles/editorStyles'
 import { FC } from 'react'
 
 interface EditorComponentProps {

@@ -1,23 +1,23 @@
 const selectStyle = {
-  indicatorSeparator: (provided) => ({
+  indicatorSeparator: (provided: any) => ({
     ...provided,
     display: 'none',
   }),
-  menu: (provided) => ({
+  menu: (provided: any) => ({
     ...provided,
     color: 'white',
     border: 'none',
     borderRadius: 8,
     backgroundColor: '#1c2333',
   }),
-  menuList: (provided) => ({
+  menuList: (provided: any) => ({
     ...provided,
     color: 'white',
     border: 'none',
     borderRadius: 8,
     cursor: 'pointer',
   }),
-  control: (provided) => ({
+  control: (provided: any) => ({
     ...provided,
     width: 200,
     backgroundColor: '#1c2333',
@@ -26,11 +26,11 @@ const selectStyle = {
     borderRadius: 8,
     cursor: 'pointer',
   }),
-  singleValue: (provided) => ({
+  singleValue: (provided: any) => ({
     ...provided,
     color: 'white',
   }),
-  option: (provided, state) => ({
+  option: (provided: any, state: any) => ({
     ...provided,
     backgroundColor: state.isSelected
       ? '#1c2365'

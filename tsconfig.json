@@ -25,8 +25,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/**/*.ts",
     ".next/types/**/*.ts",
-    "styles/selectStyle.js"
+    "styles/selectStyle.ts"
   ],
   "exclude": ["node_modules"]
 }

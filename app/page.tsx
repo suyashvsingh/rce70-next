@@ -1,20 +1,26 @@
 'use client'
 import dynamic from 'next/dynamic'
 import { useState, useEffect, useRef } from 'react'
-import Loading from '@/components/Loading'
-import OuptutTextArea from '@/components/OutputTextArea'
-import InputTextArea from '@/components/InputTextArea'
-import RunButton from '@/components/RunButton'
+import Loading from '@/components/Homepage/Loading'
+import OuptutTextArea from '@/components/Homepage/OutputTextArea'
+import InputTextArea from '@/components/Homepage/InputTextArea'
+import RunButton from '@/components/Homepage/RunButton'
 import boilerplate from '@/data/boilerplate'
-import ResetButton from '@/components/ResetButton'
-import DownloadButton from '@/components/DownloadButton'
+import ResetButton from '@/components/Homepage/ResetButton'
+import DownloadButton from '@/components/Homepage/DownloadButton'
 import useLocalStorage from '@/hooks/useLocalStorage'
-const SelectComponent = dynamic(() => import('../components/SelectComponent'), {
-  ssr: false,
-})
-const EditorComponent = dynamic(() => import('../components/EditorComponent'), {
-  ssr: false,
-})
+const SelectComponent = dynamic(
+  () => import('@/components/Homepage/SelectComponent'),
+  {
+    ssr: false,
+  }
+)
+const EditorComponent = dynamic(
+  () => import('@/components/Homepage/EditorComponent'),
+  {
+    ssr: false,
+  }
+)
 
 const Home = () => {
   const [input, setInput] = useState<string>('')
