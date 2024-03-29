@@ -17,7 +17,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://rce70.vercel.app/)
 
-Users can run code on the web without having to install any IDE or text editor. And it's free! The user can also download the code. The app currently supports 5 languages, C++, C, Python, Java and Javascript. The app is hosted on Vercel. The app is also serverless, and uses AWS Lamda to run the code.
+Users can run code on the web without having to install any IDE or text editor. And it's free! The user can also download the code. The app currently supports five languages: C++, C, Python, Java and Javascript. The app is hosted on Vercel. The app is also serverless and uses AWS Lambda to run the code.
 
 ## Tools Used
 
@@ -38,7 +38,7 @@ Users can run code on the web without having to install any IDE or text editor. 
 
 ## Live Demo
 
-https://rce70.vercel.app : Frontend hosted on Vercel, and uses AWS Lamda serverless service
+https://rce70.vercel.app: Frontend hosted on Vercel and uses AWS Lambda serverless service
 
 ## Main Features
 
@@ -50,23 +50,21 @@ https://rce70.vercel.app : Frontend hosted on Vercel, and uses AWS Lamda serverl
     ![c]
     ![java]
 
-2. There are three text editors, one for the code, one for the input and one for the output
+2. There are three text editors: one for the code, one for the input and one for the output
 
 3. The code can be run using the Run button or <kbd>Alt</kbd> + <kbd>Enter</kbd> key
 
-4. The code automatically get saved in the local storage, so that the user can continue from where he left
+4. The user can reset the code using the Reset button
 
-5. The user can reset the code using the Reset button
-
-6. The user can download the code using the Download button
+5. The user can download the code using the Download button
 
 ## Thought behind the project
 
-1. Researchers could use a Remote Code Executor app to test the security of different applications or systems, without having to run potentially dangerous code on their own machines.
+1. Researchers could use a Remote Code Executor app to test the security of different applications or systems without having to run potentially dangerous code on their machines.
 
-2. Developers could use a Remote Code Executor app to quickly test code snippets or entire applications in a controlled environment, without having to set up a local development environment.
+2. Developers could use a Remote Code Executor app to quickly test code snippets or entire applications in a controlled environment without having to set up a local development environment.
 
-3. A Remote Code Executor app could be useful for teaching coding concepts and techniques, particularly for online courses or tutorials. Students could experiment with different code examples and receive immediate feedback, without having to install anything locally.
+3. A Remote Code Executor app could be helpful for teaching coding concepts and techniques, particularly for online courses or tutorials. Students could experiment with different code examples and receive immediate feedback without having to install anything locally.
 
 ## Working
 
@@ -80,7 +78,7 @@ https://rce70.vercel.app : Frontend hosted on Vercel, and uses AWS Lamda serverl
 4. The code is sent to the server.
 
 5. The server creates a random file name and saves the code
-   and input in the file with the respective extensions.
+   and input it into the file with the respective extensions.
 
 6. The server runs the code using the respective compiler or
    interpreter, with a timeout of 10 seconds.
@@ -88,8 +86,8 @@ https://rce70.vercel.app : Frontend hosted on Vercel, and uses AWS Lamda serverl
 7. The server sends the status, data and execution time to
    the client.
 
-8. The client displays the output (or error if any) and
-   execution time in the output editor.
+8. The client displays the output (or error, if any) and
+   Execution time in the output editor.
 
 ## Getting Started
 
@@ -98,7 +96,7 @@ https://rce70.vercel.app : Frontend hosted on Vercel, and uses AWS Lamda serverl
 1. Clone the repository
 
     ```sh
-    git clone https://github.com/suyashvsingh/rce70-client.git
+    git clone https://github.com/suyashvsingh/rce70-next.git
     ```
 
 2. Install NPM packages
@@ -106,6 +104,10 @@ https://rce70.vercel.app : Frontend hosted on Vercel, and uses AWS Lamda serverl
     ```sh
     npm install
     ```
+3. Add the following to the .env.local file
+      ```sh
+      AWS_API_GATEWAY_URL={}
+      ```
 
 3. Start the application
 
@@ -113,9 +115,9 @@ https://rce70.vercel.app : Frontend hosted on Vercel, and uses AWS Lamda serverl
     npm run dev
     ```
 
-4. Application will run on PORT 5173
+4. Application will run on PORT 3000
 
-5. Write the code, and give any input (if required)
+5. Write the code and give any input (if required)
 
 6. Run the code using Run button or <kbd>Alt</kbd> + <kbd>Enter</kbd> key
 
