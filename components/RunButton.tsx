@@ -2,6 +2,7 @@ import { toast } from 'react-hot-toast'
 import { BsFillPlayFill } from 'react-icons/bs'
 import toastStyles from '../styles/toastStyle'
 import { FC } from 'react'
+import { executeCode } from '@/app/actions'
 
 interface RunButtonProps {
   setError: (error: boolean) => void
@@ -37,18 +38,11 @@ const RunButton: FC<RunButtonProps> = ({
     setError(false)
     toast.dismiss()
     setLoading(true)
-    const response = await fetch('/api/execute', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        code,
-        selectedLanguage,
-        input,
-      }),
-    })
-    const res = (await response.json()) as resInterface
+    const res = (await executeCode(
+      code,
+      selectedLanguage,
+      input
+    )) as resInterface
     if (res.status === true) {
       toast.success('Code executed', toastStyles)
       setResult(res.data)
