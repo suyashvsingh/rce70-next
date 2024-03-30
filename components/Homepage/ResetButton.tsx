@@ -4,7 +4,7 @@ import { TbArrowBackUp } from 'react-icons/tb'
 import toastStyles from '@/styles/toastStyle'
 import { FC } from 'react'
 
-interface ResetButtonProps {
+type ResetButtonProps = {
   setCode: (code: string) => void
   setInput: (input: string) => void
   setResult: (result: string) => void

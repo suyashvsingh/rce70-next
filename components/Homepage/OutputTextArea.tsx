@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-interface OuptutTextAreaProps {
+type OuptutTextAreaProps = {
   result: string
   error: boolean
   executionTime: number

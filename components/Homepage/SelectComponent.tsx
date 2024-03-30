@@ -3,7 +3,9 @@ import selectStyle from '@/styles/selectStyle'
 import languages from '@/data/languages'
 import { FC } from 'react'
 
-interface SelectComponentProps {
+import { Language } from '@/styles/selectStyle'
+
+type SelectComponentProps = {
   selectedLanguage: {
     value: string
     label: string
@@ -22,7 +24,8 @@ const SelectComponent: FC<SelectComponentProps> = ({
     <Select
       value={selectedLanguage}
       options={languages}
-      formatOptionLabel={(language) => (
+      styles={selectStyle}
+      formatOptionLabel={(language: Language) => (
         <div className="flex gap-2 items-center ">
           <img src={`images/${language.value}.png`} className="w-4 h-4" />
           <span>{language.label}</span>
@@ -31,7 +34,6 @@ const SelectComponent: FC<SelectComponentProps> = ({
       onChange={(selectedOption) => {
         setSelectedLanguage(selectedOption as { value: string; label: string })
       }}
-      styles={selectStyle}
     />
   )
 }

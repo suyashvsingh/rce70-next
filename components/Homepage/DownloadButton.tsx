@@ -3,7 +3,7 @@ import fileDownload from 'js-file-download'
 import random from 'random'
 import { TbDownload } from 'react-icons/tb'
 
-interface DownloadButtonProps {
+type DownloadButtonProps = {
   code: string
   selectedLanguage: {
     value: string

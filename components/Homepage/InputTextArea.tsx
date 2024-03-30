@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-interface InputTextAreaProps {
+type InputTextAreaProps = {
   input: string
   setInput: (input: string) => void
 }

@@ -4,7 +4,7 @@ import toastStyles from '@/styles/toastStyle'
 import { FC } from 'react'
 import { executeCode } from '@/app/actions'
 
-interface RunButtonProps {
+type RunButtonProps = {
   setError: (error: boolean) => void
   setLoading: (loading: boolean) => void
   code: string
@@ -18,7 +18,7 @@ interface RunButtonProps {
   setExecutionTime: (executionTime: number) => void
 }
 
-interface resInterface {
+type Res = {
   status: boolean
   data: string
   executionTime?: number
@@ -38,11 +38,7 @@ const RunButton: FC<RunButtonProps> = ({
     setError(false)
     toast.dismiss()
     setLoading(true)
-    const res = (await executeCode(
-      code,
-      selectedLanguage,
-      input
-    )) as resInterface
+    const res = (await executeCode(code, selectedLanguage, input)) as Res
     if (res.status === true) {
       toast.success('Code executed', toastStyles)
       setResult(res.data)

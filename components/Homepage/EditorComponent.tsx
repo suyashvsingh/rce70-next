@@ -2,7 +2,7 @@ import Editor from '@monaco-editor/react'
 import { customTheme, optionsEditor } from '@/styles/editorStyles'
 import { FC } from 'react'
 
-interface EditorComponentProps {
+type EditorComponentProps = {
   code: string
   setCode: (code: string) => void
   selectedLanguage: {
