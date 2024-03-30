@@ -5,5 +5,5 @@ const boilerplate = {
   c: '#include <stdio.h>\n\nint main() {\n\n\tprintf("Hello C World");\n\n\treturn 0;\n}',
   java: 'class Main {\n\n\tpublic static void main(String[] args) {\n\n\t\tSystem.out.println("Hello Java World");\n\n\t}\n}',
 }
-
+export type boilerplateLanguageEnum = keyof typeof boilerplate // 'python' | 'javascript' | 'cpp' | 'c' | 'java' an enum
 export default boilerplate

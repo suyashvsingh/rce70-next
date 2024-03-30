@@ -5,7 +5,7 @@ import Loading from '@/components/Homepage/Loading'
 import OuptutTextArea from '@/components/Homepage/OutputTextArea'
 import InputTextArea from '@/components/Homepage/InputTextArea'
 import RunButton from '@/components/Homepage/RunButton'
-import boilerplate from '@/data/boilerplate'
+import boilerplate, { boilerplateLanguageEnum } from '@/data/boilerplate'
 import ResetButton from '@/components/Homepage/ResetButton'
 import DownloadButton from '@/components/Homepage/DownloadButton'
 import useLocalStorage from '@/hooks/useLocalStorage'
@@ -40,7 +40,7 @@ const Home = () => {
 
   const [code, setCode] = useLocalStorage<string>(
     selectedLanguage.value,
-    boilerplate[selectedLanguage.value as keyof typeof boilerplate]
+    boilerplate[selectedLanguage.value as boilerplateLanguageEnum]
   )
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Home = () => {
     if (storedCode) {
       setCode(JSON.parse(storedCode))
     } else
-      setCode(boilerplate[selectedLanguage.value as keyof typeof boilerplate])
+      setCode(boilerplate[selectedLanguage.value as boilerplateLanguageEnum])
   }, [selectedLanguage, setCode])
 
   useEffect(() => {
