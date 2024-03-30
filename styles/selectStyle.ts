@@ -1,23 +1,25 @@
-const selectStyle = {
-  indicatorSeparator: (provided: any) => ({
+import { StylesConfig } from 'react-select'
+
+const selectStyle: StylesConfig = {
+  indicatorSeparator: (provided) => ({
     ...provided,
     display: 'none',
   }),
-  menu: (provided: any) => ({
+  menu: (provided) => ({
     ...provided,
     color: 'white',
     border: 'none',
     borderRadius: 8,
     backgroundColor: '#1c2333',
   }),
-  menuList: (provided: any) => ({
+  menuList: (provided) => ({
     ...provided,
     color: 'white',
     border: 'none',
     borderRadius: 8,
     cursor: 'pointer',
   }),
-  control: (provided: any) => ({
+  control: (provided) => ({
     ...provided,
     width: 200,
     backgroundColor: '#1c2333',
@@ -26,11 +28,11 @@ const selectStyle = {
     borderRadius: 8,
     cursor: 'pointer',
   }),
-  singleValue: (provided: any) => ({
+  singleValue: (provided) => ({
     ...provided,
     color: 'white',
   }),
-  option: (provided: any, state: any) => ({
+  option: (provided, state) => ({
     ...provided,
     backgroundColor: state.isSelected
       ? '#1c2365'
