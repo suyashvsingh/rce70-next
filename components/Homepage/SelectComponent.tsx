@@ -2,7 +2,7 @@ import Select from 'react-select'
 import selectStyle from '@/styles/selectStyle'
 import languages from '@/data/languages'
 import { FC } from 'react'
-
+import Image from 'next/image'
 import { Language } from '@/styles/selectStyle'
 
 type SelectComponentProps = {
@@ -27,7 +27,12 @@ const SelectComponent: FC<SelectComponentProps> = ({
       styles={selectStyle}
       formatOptionLabel={(language: Language) => (
         <div className="flex gap-2 items-center ">
-          <img src={`images/${language.value}.png`} className="w-4 h-4" />
+          <Image
+            src={`/images/${language.value}.png`}
+            alt={language.label}
+            width={16}
+            height={16}
+          />
           <span>{language.label}</span>
         </div>
       )}
