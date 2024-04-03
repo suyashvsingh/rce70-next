@@ -9,18 +9,8 @@ import boilerplate, { boilerplateLanguageEnum } from '@/data/boilerplate'
 import ResetButton from '@/components/Homepage/ResetButton'
 import DownloadButton from '@/components/Homepage/DownloadButton'
 import useLocalStorage from '@/hooks/useLocalStorage'
-const SelectComponent = dynamic(
-  () => import('@/components/Homepage/SelectComponent'),
-  {
-    ssr: false,
-  }
-)
-const EditorComponent = dynamic(
-  () => import('@/components/Homepage/EditorComponent'),
-  {
-    ssr: false,
-  }
-)
+import SelectComponent from '@/components/Homepage/SelectComponent'
+import EditorComponent from '@/components/Homepage/EditorComponent'
 
 const Home = () => {
   const [input, setInput] = useState<string>('')

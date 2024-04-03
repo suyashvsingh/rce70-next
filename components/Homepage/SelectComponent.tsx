@@ -22,9 +22,11 @@ const SelectComponent: FC<SelectComponentProps> = ({
 }) => {
   return (
     <Select
+      isMulti={false}
       value={selectedLanguage}
       options={languages}
       styles={selectStyle}
+      instanceId={selectedLanguage.value}
       formatOptionLabel={(language: Language) => (
         <div className="flex gap-2 items-center ">
           <Image
@@ -32,12 +34,13 @@ const SelectComponent: FC<SelectComponentProps> = ({
             alt={language.label}
             width={16}
             height={16}
+            className="h-5 w-5"
           />
           <span>{language.label}</span>
         </div>
       )}
       onChange={(selectedOption) => {
-        setSelectedLanguage(selectedOption as { value: string; label: string })
+        setSelectedLanguage(selectedOption as typeof selectedLanguage)
       }}
     />
   )
