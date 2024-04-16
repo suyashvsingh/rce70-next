@@ -3,15 +3,14 @@ import boilerplate from '@/data/boilerplate'
 import { TbArrowBackUp } from 'react-icons/tb'
 import toastStyles from '@/styles/toastStyle'
 import { FC } from 'react'
+import { Language } from '@/types'
 
 type ResetButtonProps = {
   setCode: (code: string) => void
   setInput: (input: string) => void
   setResult: (result: string) => void
   setError: (error: boolean) => void
-  selectedLanguage: {
-    value: string
-  }
+  selectedLanguage: Language
 }
 
 const ResetButton: FC<ResetButtonProps> = ({
@@ -23,7 +22,7 @@ const ResetButton: FC<ResetButtonProps> = ({
 }) => {
   const onClickReset = () => {
     toast.dismiss()
-    setCode(boilerplate[selectedLanguage.value as keyof typeof boilerplate])
+    setCode(boilerplate[selectedLanguage.value])
     setInput('')
     setResult('')
     setError(false)

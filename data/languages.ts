@@ -1,4 +1,6 @@
-const languages = [
+import { Language } from '@/types'
+
+const languages: Language[] = [
   { value: 'javascript', label: 'JavaScript' },
   { value: 'python', label: 'Python' },
   { value: 'cpp', label: 'C++' },

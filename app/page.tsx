@@ -1,11 +1,11 @@
 'use client'
-import dynamic from 'next/dynamic'
+import { Language } from '@/types'
 import { useState, useEffect, useRef } from 'react'
 import Loading from '@/components/Homepage/Loading'
 import OuptutTextArea from '@/components/Homepage/OutputTextArea'
 import InputTextArea from '@/components/Homepage/InputTextArea'
 import RunButton from '@/components/Homepage/RunButton'
-import boilerplate, { boilerplateLanguageEnum } from '@/data/boilerplate'
+import boilerplate from '@/data/boilerplate'
 import ResetButton from '@/components/Homepage/ResetButton'
 import DownloadButton from '@/components/Homepage/DownloadButton'
 import useLocalStorage from '@/hooks/useLocalStorage'
@@ -20,25 +20,26 @@ const Home = () => {
   const [loading, setLoading] = useState<boolean>(false)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
-  const [selectedLanguage, setSelectedLanguage] = useLocalStorage<{
-    value: string
-    label: string
-  }>('selected-language', {
+  const defaultLanguage: Language = {
     value: 'javascript',
     label: 'JavaScript',
-  })
+  }
+
+  const [selectedLanguage, setSelectedLanguage] = useLocalStorage<Language>(
+    'selected-language',
+    defaultLanguage
+  )
 
   const [code, setCode] = useLocalStorage<string>(
     selectedLanguage.value,
-    boilerplate[selectedLanguage.value as boilerplateLanguageEnum]
+    boilerplate[selectedLanguage.value]
   )
 
   useEffect(() => {
     const storedCode = localStorage.getItem(selectedLanguage.value)
     if (storedCode) {
       setCode(JSON.parse(storedCode))
-    } else
-      setCode(boilerplate[selectedLanguage.value as boilerplateLanguageEnum])
+    } else setCode(boilerplate[selectedLanguage.value])
   }, [selectedLanguage, setCode])
 
   useEffect(() => {

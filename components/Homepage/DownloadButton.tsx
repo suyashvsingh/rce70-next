@@ -2,12 +2,11 @@ import { FC } from 'react'
 import fileDownload from 'js-file-download'
 import random from 'random'
 import { TbDownload } from 'react-icons/tb'
+import { Language } from '@/types'
 
 type DownloadButtonProps = {
   code: string
-  selectedLanguage: {
-    value: string
-  }
+  selectedLanguage: Language
 }
 
 const DownloadButton: FC<DownloadButtonProps> = ({
@@ -24,7 +23,7 @@ const DownloadButton: FC<DownloadButtonProps> = ({
     }
 
     const fileName: string = `${random.int(0, 1000000)}.${
-      fileExtensions[selectedLanguage.value as keyof typeof fileExtensions]
+      fileExtensions[selectedLanguage.value]
     }`
 
     fileDownload(code, fileName)

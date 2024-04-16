@@ -3,17 +3,11 @@ import selectStyle from '@/styles/selectStyle'
 import languages from '@/data/languages'
 import { FC } from 'react'
 import Image from 'next/image'
-import { Language } from '@/styles/selectStyle'
+import { Language } from '@/types'
 
 type SelectComponentProps = {
-  selectedLanguage: {
-    value: string
-    label: string
-  }
-  setSelectedLanguage: (selectedLanguage: {
-    value: string
-    label: string
-  }) => void
+  selectedLanguage: Language
+  setSelectedLanguage: (selectedLanguage: Language) => void
 }
 
 const SelectComponent: FC<SelectComponentProps> = ({
@@ -40,7 +34,7 @@ const SelectComponent: FC<SelectComponentProps> = ({
         </div>
       )}
       onChange={(selectedOption) => {
-        setSelectedLanguage(selectedOption as typeof selectedLanguage)
+        setSelectedLanguage(selectedOption as Language)
       }}
     />
   )

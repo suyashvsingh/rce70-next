@@ -3,15 +3,13 @@ import { BsFillPlayFill } from 'react-icons/bs'
 import toastStyles from '@/styles/toastStyle'
 import { FC } from 'react'
 import { executeCode } from '@/app/actions'
+import { Language } from '@/types'
 
 type RunButtonProps = {
   setError: (error: boolean) => void
   setLoading: (loading: boolean) => void
   code: string
-  selectedLanguage: {
-    value: string
-    label: string
-  }
+  selectedLanguage: Language
   input: string
   setResult: (result: string) => void
   buttonRef: any

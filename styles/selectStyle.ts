@@ -1,9 +1,5 @@
 import { StylesConfig } from 'react-select'
-
-export type Language = {
-  value: string
-  label: string
-}
+import { Language } from '@/types'
 
 const selectStyle: StylesConfig<Language, false> = {
   indicatorSeparator: (provided) => ({

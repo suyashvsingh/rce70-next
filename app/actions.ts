@@ -1,11 +1,10 @@
 'use server'
+import { Language } from '@/types'
 import axios from 'axios'
 
 export const executeCode = async (
   code: string,
-  selectedLanguage: {
-    value: string
-  },
+  selectedLanguage: Language,
   input: string
 ) => {
   try {
